@@ -1,0 +1,8 @@
+{{ range $runtimeContainer := $ }}
+    ID: {{ $runtimeContainer.ID }}
+{{ end }}
+
+{{ $CurrentContainer := where $ "ID" .Docker.CurrentContainerID | first }}
+
+.Docker.CurrentContainerID: {{ .Docker.CurrentContainerID }}
+CurrentContainer: {{ $CurrentContainer.Name }}
